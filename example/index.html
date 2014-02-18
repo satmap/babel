@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src='../langs/default.js'></script>
+		<script src='../langs/german.js'></script>
+		<script src='../Babel.js'></script>
+		
+		<script>
+			var lang = new Babel();
+			lang.fallback('english');
+		</script>
+	</head>
+	<body>
+		<p>This is something here <span id='bind-value'></span></p>
+		
+		<p><button onclick='speakGerman();'>Speak German</button>
+		
+		<script>
+			document.getElementById('bind-value').innerHTML = lang.l('navigation');
+			function speakGerman(){
+				lang.speak('german');
+				document.getElementById('bind-value').innerHTML = lang.l('navigation');
+			}
+		</script>
+	</body>
+</html>

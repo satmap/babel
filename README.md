@@ -6,8 +6,9 @@ This JSlib handles multi-language support.
 
 ```js
 
-var lang = new Bable();
+var lang = new Babel();
 lang.speak('german');
+lang.fallback('english');
 
 lang.format('uppercase').say('navigation');
 lang.format('lowercase').say('navigation');
@@ -23,12 +24,18 @@ lang.u('navigation') // navigation in uppercase
 	
 ```
 
-Language File ``./langs/german.json``
+Language File ``./langs/german.js``
 
 ```js
-{
+var english = {
 	"navigation":"steuerung",
 	"home":"zuhause",
 	"route-add":"route planen"
 }
+```
+You have to include all language files you wish to use in script tags. 
+
+```html
+<script src='./langs/default.js'></script>
+<script src='./langs/german.js'></script>
 ```
