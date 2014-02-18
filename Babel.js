@@ -7,11 +7,7 @@
 		this.language.fallback = {}
 		
 		this.options = options || {};
-		
-		this.options.dir = this.options.dir || 'langs';
 		this.options.format = this.options.format || 'standard';
-		
-		this.languageMap = [ ];
 		
 		this.speak = function(lang){
 			if(typeof window[lang] == 'object'){
@@ -52,12 +48,6 @@
 				words[word] = this._propercase(words[word]);
 			}
 			return words.join(' ');
-		}
-		
-		this._getlang = function(){
-			var req = new XMLHttpRequest();
-			req.open('GET',this.options.dir + this.options.lang + '.json');
-			req.send();
 		}
 		
 		this._format = function(val){
