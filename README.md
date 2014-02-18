@@ -27,7 +27,7 @@ lang.u('navigation') // navigation in uppercase
 Language File ``./langs/german.js``
 
 ```js
-var english = {
+var german = {
 	"navigation":"steuerung",
 	"home":"zuhause",
 	"route-add":"route planen"
