@@ -8,10 +8,15 @@
 		
 		this.options = options || {};
 		this.options.format = this.options.format || 'standard';
+		this.options.auto = 0;
 		
 		this.speak = function(lang){
 			if(typeof window[lang] == 'object'){
 				this.language.current = window[lang];
+				
+				if(this.options.auto){
+					this.auto();
+				}
 			}
 			return this;
 		}
@@ -86,6 +91,18 @@
 		this.u = function(val){
 			this.format('upper');
 			return this._format(this.say(val));
+		}
+		
+		this.auto = function(){
+			this.options.auto = 1;
+			for(val in this.language.current){
+				var ele = document.getElementById('babel-'+val);
+				if(ele){
+					var att = ele.getAttribute("data-format");
+					if(att){ this.format(att); }
+					ele.innerHTML = this.s(val);
+				}
+			}
 		}
 	}
 	
