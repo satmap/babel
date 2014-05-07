@@ -61,3 +61,5 @@ $(window).load(function(){
 
 if you use ``auto``, it will be re-triggered when ever you you use ``speak`` so auto binding will automatically update values if you switch language.
 
+[![Code Climate](https://codeclimate.com/github/waxim/babel.js.png)](https://codeclimate.com/github/waxim/babel.js)
+
