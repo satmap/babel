@@ -1,5 +1,6 @@
 (function(){
-
+	
+	// Start babel
 	var babel = function(options){
 		
 		this.language = {}
