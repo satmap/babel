@@ -1,4 +1,4 @@
-# SatMap Language Lib
+# Satmap Language Lib
 
 This JSlib handles multi-language support.
 
